@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Moumita's Project Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #cbe4f9, #e8dffb);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    .project-box {
+      background-color: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(6px);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease, transform 0.3s ease;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+      border-radius: 16px;
+    }
+
+    .project-box.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .project-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn {
+      padding: 0.6em 1.4em;
+      border-radius: 8px;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+      color: #fff;
+      background: linear-gradient(to right, #a18cd1, #fbc2eb);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+  </style>
+</head>
+<body class="text-gray-800 px-4 py-10">
+  <div class="max-w-4xl mx-auto pb-20">
+    <h1 class="text-3xl sm:text-4xl font-bold text-center text-purple-800 mb-10">🚀 My Project Portfolio (Moumita Mondal)</h1>
+
+    <div class="space-y-6">
+
+      <!-- Project 1 -->
+      <div class="project-box p-6 flex flex-col md:flex-row md:justify-between md:items-center gap-4">
+        <h2 class="text-base sm:text-lg md:text-xl font-semibold">
+          ☁️ Weather Forecast App <span class="text-sm">[Python + Streamlit]</span>
+        </h2>
+        <div class="flex flex-wrap gap-3">
+          <a href="https://github.com/MOUMITAMONDAL1/weatheriq.git" target="_blank"><button class="btn">GitHub</button></a>
+          <a href="https://moumitamondal1-weatheriq-app-zajh0n.streamlit.app/" target="_blank"><button class="btn">Live</button></a>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-box p-6 flex flex-col md:flex-row md:justify-between md:items-center gap-4">
+        <h2 class="text-base sm:text-lg md:text-xl font-semibold">
+          👩‍💻 Personal Portfolio Website <span class="text-sm">[Figma Prototype]</span>
+        </h2>
+        <div class="flex flex-wrap gap-3">
+          <a href="https://github.com/MOUMITAMONDAL1/Own-portfolio.git" target="_blank"><button class="btn">GitHub</button></a>
+          <a href="https://moumitamondal1.github.io/Own-portfolio/" target="_blank"><button class="btn">Live</button></a>
+        </div>
+      </div>
+      
+      <!-- Project 3 -->
+      <div class="project-box p-6 flex flex-col md:flex-row md:justify-between md:items-center gap-4">
+        <h2 class="text-base sm:text-lg md:text-xl font-semibold">
+          🌐 Animated Portfolio Website <span class="text-sm">[HTML, CSS, JS]</span>
+        </h2>
+        <div class="flex flex-wrap gap-3">
+          <a href="https://github.com/MOUMITAMONDAL1/Portfolio" target="_blank"><button class="btn">GitHub</button></a>
+          <a href="https://moumitamondal1.github.io/Portfolio/" target="_blank"><button class="btn">Live</button></a>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project-box p-6 flex flex-col md:flex-row md:justify-between md:items-center gap-4">
+        <h2 class="text-base sm:text-lg md:text-xl font-semibold">
+          🎥 M-TUBE: YouTube Downloader <span class="text-sm">[Python]</span>
+        </h2>
+        <div class="flex flex-wrap gap-3">
+          <a href="https://github.com/MOUMITAMONDAL1/M-TUBE.git" target="_blank"><button class="btn">GitHub</button></a>
+        </div>
+      </div>
+
+      <!-- Project 5 -->
+      <div class="project-box p-6 flex flex-col md:flex-row md:justify-between md:items-center gap-4">
+        <h2 class="text-base sm:text-lg md:text-xl font-semibold">
+          ⚡ Quick Web Access Tool <span class="text-sm">[Python + Tkinter]</span>
+        </h2>
+        <div class="flex flex-wrap gap-3">
+          <a href="https://github.com/MOUMITAMONDAL1/Quick-Web-Access.git" target="_blank"><button class="btn">GitHub</button></a>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <!-- JS: Fade-in on scroll -->
+  <script>
+    const boxes = document.querySelectorAll('.project-box');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    boxes.forEach(box => observer.observe(box));
+  </script>
+</body>
+</html>
